@@ -1,0 +1,16 @@
+<?php if($block->getSubCats()): ?>
+    <div class="row sub-cat-row">
+        <?php foreach(explode(',',$block->getSubCats()) as $subcat):
+            $currentCat = $block->getCategoryById($subcat);
+            ?>
+            <div class="col-md-4 sub-cat-col">
+                <div>
+                    <a href="<?php echo $currentCat->getUrl(); ?>"><?php echo $currentCat->getName(); ?></a>
+                    <a href="<?php echo $currentCat->getUrl(); ?>">
+                        <img src="<?php echo $currentCat->getImageUrl(); ?>" alt="<?php echo $currentCat->getName(); ?>">
+                    </a>
+                </div>
+            </div>
+        <?php endforeach; ?>
+    </div>
+<?php endif; ?>
